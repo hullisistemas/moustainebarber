@@ -1,7 +1,7 @@
 import 'package:app/tela_principal.dart';
 import 'package:flutter/material.dart';
 
-import 'icones.dart';
+import 'package:app/Widgets/FlipWidget.dart';
 
 void main() => runApp(MyApp());
 
