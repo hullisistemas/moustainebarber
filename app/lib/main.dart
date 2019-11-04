@@ -1,6 +1,8 @@
 import 'package:app/tela_principal.dart';
 import 'package:flutter/material.dart';
 
+import 'icones.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -56,13 +58,20 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
   }
 
+  bool _animacao = false;
+
   void _realizarLogin(){
 
 
-    TelaPrincipal telaPrincipal = new TelaPrincipal(controlUsuario.text, controlSenha.text);
+    /*TelaPrincipal telaPrincipal = new TelaPrincipal(controlUsuario.text, controlSenha.text);
 
     Navigator.push(context,
-    MaterialPageRoute(builder: (context) => telaPrincipal));
+    MaterialPageRoute(builder: (context) => telaPrincipal));*/
+
+    setState(() {
+      _animacao = !_animacao;
+    });
+
   }
 
   @override
@@ -106,6 +115,13 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Login"),
               onPressed: _realizarLogin,
             ),
+            FlipWidget(
+              child: RaisedButton(
+                child: Text("Login"),
+                onPressed: _realizarLogin,
+              ),
+              animacao: _animacao,
+            )
           ],
         ),
       ),
