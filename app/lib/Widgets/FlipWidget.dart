@@ -3,9 +3,9 @@ import 'dart:math' as math;
 
 class FlipWidget extends StatelessWidget {
   Widget child;
-  bool animacao = false;
+  double valor;
 
-  FlipWidget({Key key, this.child, this.animacao}) : super(key: key);
+  FlipWidget({Key key, this.child, this.valor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class FlipWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Transform(
-            transform: Matrix4.identity()..setEntry(3, 2, 0.006)..rotateX((animacao ? math.pi /  20: math.pi / 2)),
+            transform: Matrix4.identity()..setEntry(3, 2, 0.006)..rotateX(valor),
             alignment: Alignment.bottomCenter,
             child: ClipRect(
               child: Align(
