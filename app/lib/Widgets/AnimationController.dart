@@ -21,7 +21,7 @@ class _PageState extends State<Page>	with SingleTickerProviderStateMixin {
 		vsync: this,
 	  );
 
-    animation = new Tween(begin: 0.0, end: 1.57079632679).animate(_controller);
+    animation = new Tween(begin: 0.0, end: 200).animate(_controller);
 
     animation.addStatusListener((status){
       
@@ -53,18 +53,34 @@ class a extends AnimatedWidget{
 
     Animation animation = listenable;
     return Center(
-      child: new FlipWidget(
-        valor: animation.value,
-        child: Container(
-          width: 150,
-          height: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100),
-            color: Colors.amber
+      child: Stack(children: <Widget>[
+        FlipWidget(
+          valor: animation.value,
+          parte: false,
+          child: Container(
+            width: 150,
+            height: 150,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100),
+              color: Colors.red
+            ),
+          )
+        ),
 
-          ),
+        FlipWidget(
+          valor: animation.value,
+          parte: true,
+          child: Container(
+            width: 150,
+            height: 150,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100),
+              color: Colors.amber
+            ),
+          )
         )
-      ),
+
+      ],)
     );
   }
 

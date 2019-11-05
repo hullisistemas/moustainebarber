@@ -112,17 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Login"),
               onPressed: _realizarLogin,
             ),
-            Stack(
-              children: <Widget>[
-
-                Page(),
-                RaisedButton(
-                  child: Text("Login"),
-                  onPressed: _realizarLogin,
-                ),
-
-              ],              
-            )
+            Page()
             
 
 

@@ -3,9 +3,10 @@ import 'dart:math' as math;
 
 class FlipWidget extends StatelessWidget {
   Widget child;
+  bool parte;
   double valor;
 
-  FlipWidget({Key key, this.child, this.valor}) : super(key: key);
+  FlipWidget({Key key, this.child, this.valor,this.parte}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class FlipWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Transform(
-            transform: Matrix4.identity()..setEntry(3, 2, 0.006)..rotateX(valor),
+            transform: Matrix4.identity()..setEntry(3, 2, 0.006)..rotateX( (parte ? valor : 0 ) ),
             alignment: Alignment.bottomCenter,
             child: ClipRect(
               child: Align(
