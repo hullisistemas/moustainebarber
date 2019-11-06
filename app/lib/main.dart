@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import 'package:app/Widgets/FlipWidget.dart';
 
+import 'dart:math' as math;
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -65,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-  bool _animacao = false;
+
 
   void _realizarLogin(){
 
@@ -76,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
     MaterialPageRoute(builder: (context) => telaPrincipal));*/
 
     setState(() {
-      _animacao = !_animacao;
+      
     });
 
   }

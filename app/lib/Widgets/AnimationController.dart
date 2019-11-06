@@ -1,7 +1,13 @@
 import 'package:app/Widgets/FlipWidget.dart';
 import 'package:flutter/material.dart';
 
+
 class Page extends StatefulWidget {
+
+
+
+  const Page({Key key}) : super(key: key);
+
   @override
   _PageState createState() => new _PageState();
 }
@@ -21,15 +27,19 @@ class _PageState extends State<Page>	with SingleTickerProviderStateMixin {
 		vsync: this,
 	  );
 
-    animation = new Tween(begin: 0.0, end: 200).animate(_controller);
+    animation = new Tween(begin: 0.0, end: 120.0).animate(_controller);
 
     animation.addStatusListener((status){
       
     });
 
-    _controller.forward();
+    
 
 	}
+
+  void iniciarAPP(){
+    _controller.forward();
+  }
 
   
 
@@ -41,13 +51,15 @@ class _PageState extends State<Page>	with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return a(animation: animation,);
+    return logoAnimado(iniciarAPP,animation: animation);
   }
 }
 
-class a extends AnimatedWidget{
+class logoAnimado extends AnimatedWidget{
 
-  a({Key key, Animation animation}) : super(key: key, listenable: animation);
+  logoAnimado(this.onTap, {Key key, Animation animation}) : super(key: key, listenable: animation);
+
+  final Function onTap;
 
   Widget build(BuildContext context){
 
@@ -55,8 +67,8 @@ class a extends AnimatedWidget{
     return Center(
       child: Stack(children: <Widget>[
         FlipWidget(
-          valor: animation.value,
-          parte: false,
+          parteCima: 0,
+          parteBaixo: 0,
           child: Container(
             width: 150,
             height: 150,
@@ -68,8 +80,9 @@ class a extends AnimatedWidget{
         ),
 
         FlipWidget(
-          valor: animation.value,
-          parte: true,
+          parteCima: (animation.value <= 60 ? 0.02617993877 * animation.value : 1.57079632679),
+          parteBaixo: (animation.value > 60 ? (-1.57079632679 / (animation.value-60))  : -1.57079632679),
+          onTap1: onTap,
           child: Container(
             width: 150,
             height: 150,

@@ -5,8 +5,9 @@ class FlipWidget extends StatelessWidget {
 
   double parteCima, parteBaixo;
 
-  FlipWidget({Key key, this.child, this.parteCima,this.parteBaixo}) : super(key: key);
+  FlipWidget({Key key, this.child, this.parteCima,this.parteBaixo, this.onTap1, this.onTap2}) : super(key: key);
 
+  final Function onTap1,onTap2;
  
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,10 @@ class FlipWidget extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topCenter,
                 heightFactor: 0.5,
-                child: child,
+                child: GestureDetector(
+                  onTap: onTap1,
+                  child:child
+                ),
               )
             ),
           ),
@@ -35,7 +39,10 @@ class FlipWidget extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 heightFactor: 0.5,
-                child: child,
+                child: GestureDetector(
+                  onTap: onTap2,
+                  child:child
+                ),
               )
             ),
           ),
