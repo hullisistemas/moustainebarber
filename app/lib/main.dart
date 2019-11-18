@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: controlSenha,
               obscureText: true,
               decoration: InputDecoration(
-                labelText: 'Senha',                
+                labelText: 'Senh a',                
               ),
             ),
             Page() 
