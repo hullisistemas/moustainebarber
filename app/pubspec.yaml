@@ -1,5 +1,5 @@
-name: app
-description: A new Flutter project.
+name: Moustaine
+description: Aplicativo para gerenciamento de Barbearias e Salões de Beleza .
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -41,8 +41,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
+  assets:
+    - imagens/logo.png
+    - imagens/moustaine.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

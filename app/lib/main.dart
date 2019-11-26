@@ -1,4 +1,3 @@
-import 'package:app/Widgets/AnimationController.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -47,20 +46,49 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextFormField(
-              controller: controlUsuario,              
-              decoration: InputDecoration(
-                labelText: 'Usuario'
-              ),
+            Image.asset('imagens/moustaine.png',width: 240), 
+            new Row(
+              children: <Widget>[
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: new Container(
+                      alignment: Alignment.center,
+                      height: 60.0,
+                      decoration: new BoxDecoration(color: Colors.green, borderRadius: new BorderRadius.circular(10.0)),
+                      child: new Text("Entrar com o Email", style: new TextStyle(fontSize: 20.0),),
+                    ),
+                  ),
+                )
+              ],
             ),
-            TextFormField(
-              controller: controlSenha,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Senh a',                
-              ),
+            new Row(
+              children: <Widget>[
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: new Container(
+                      alignment: Alignment.center,
+                      height: 60.0,
+                      decoration: new BoxDecoration(color: Colors.green, borderRadius: new BorderRadius.circular(10.0)),
+                      child: new Text("Entrar com o Email", style: new TextStyle(fontSize: 20.0),),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: new Container(
+                      alignment: Alignment.center,
+                      height: 60.0,
+                      decoration: new BoxDecoration(color: Colors.green, borderRadius: new BorderRadius.circular(10.0)),
+                      child: new Text("Entrar com o Email", style: new TextStyle(fontSize: 20.0),),
+                    ),
+                  ),
+                )
+              ],
             ),
-            Page() 
+                     
           ],
         ),
       ),     
